@@ -1,9 +1,10 @@
 import "./campos-texto.css"; 
 
-const CamposTexto = () =>{
+const CamposTexto = (props) =>{
+    const textoDescripcion = `${props.descripcion}...`;
     return <div className="campo-texto">
-        <label>Nombre</label>
-        <input placeholder="Ingrese su nombre: "/>
+        <label>{props.titulo}</label>
+        <input placeholder={textoDescripcion}/>
     </div>
 }
 
