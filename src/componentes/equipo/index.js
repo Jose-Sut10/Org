@@ -1,0 +1,12 @@
+import "./equipo.css"; 
+
+const Equipo = (props)=>{
+    return <section className='equipo'>
+        <h3>{props.nombreEquipo}</h3>
+        <div className='colaboradores'>
+
+        </div>
+    </section>
+}
+
+export default Equipo; 
