@@ -3,17 +3,7 @@ import "./lista-opciones.css";
 const ListaOpciones = (props)=>{
     //metodo map -> arreglo.map( (equipos, posicion)=> {
     // return <option></option>
-   // }); 
-    const equipos = [
-        "Programación",
-        "Front End",
-        "Data Science",
-        "Devops",
-        "UX y Diseño",
-        "Móvil", 
-        "Innovación y Gestión"
-    ]; 
-
+   // });
     const manejoCambios = (event)=>{
         props.actualizarValor(event.target.value); 
     }
@@ -24,7 +14,7 @@ const ListaOpciones = (props)=>{
             <option value="" disabled defaultValue="" hidden>
                 Seleccionar equipo
             </option>
-            {equipos.map( (nombre_equipo,posicion)=> <option key={posicion} value={nombre_equipo}>
+            {props.nombreEquipos.map( (nombre_equipo,posicion)=> <option key={posicion} value={nombre_equipo}>
                 {nombre_equipo}</option> )}
         </select>
     </div>

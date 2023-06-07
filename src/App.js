@@ -54,7 +54,8 @@ function App() {
   return (
     <div>
       <Encabezado/>
-      {mostrarFormulario && <Formulario/>}
+      {mostrarFormulario && <Formulario equipos={listaEquipos.map((tituloEquipo)=> tituloEquipo.titulo)}/>}
+
       <MiOrg estado={cambioMostrar}/>
       
       {

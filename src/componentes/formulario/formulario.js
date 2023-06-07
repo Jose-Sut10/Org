@@ -4,7 +4,7 @@ import CamposTexto from "../camposTexto";
 import ListaOpciones from "../lista-opciones";
 import BotonCrear from "../boton";
 
-const Formulario = () =>{
+const Formulario = (props) =>{
 
     const [nombre,actualizarNombre] = useState("");
     const [puesto,actualizarPuesto] = useState(""); 
@@ -53,6 +53,7 @@ const Formulario = () =>{
             <ListaOpciones 
                 valor = {equipo}
                 actualizarValor = {actualizarEquipo}
+                nombreEquipos={props.equipos}
             />
             <BotonCrear>
                 Crear
