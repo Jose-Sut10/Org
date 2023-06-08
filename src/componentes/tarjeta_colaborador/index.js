@@ -1,13 +1,16 @@
 import "./colaborador.css"
 
 const Colaborador = (props)=>{
+
+    const {nombreColab,puestoColab,fotoColab,equipoColab} = props.datos;
+
     return <div className="tarjetaColaborador">
         <div className="encabezado">
-            <img src="https://github.com/Jose-Sut10.png" alt="Foto"/>
+            <img src={fotoColab} alt={nombreColab}/>
         </div>
         <div className="informacion">
-            <h4>José Sut</h4>
-            <h5>Instructor</h5>
+            <h4>{nombreColab}</h4>
+            <h5>{puestoColab}</h5>
         </div>
     </div>
 }

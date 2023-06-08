@@ -71,7 +71,11 @@ function App() {
       <MiOrg estado={cambioMostrar}/>
       
       {
-        listaEquipos.map( (equipo)=> <Equipo nombreEquipo={equipo} key={equipo.titulo}/>)
+        listaEquipos.map( (equipo)=> <Equipo 
+        nombreEquipo={equipo} 
+        key={equipo.titulo}
+        colaboradores = {datos}
+        />)
       }
 
     </div>

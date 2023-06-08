@@ -4,6 +4,7 @@ import Colaborador from "../tarjeta_colaborador";
 const Equipo = (props)=>{
 
     const {colorPrimario, colorSecundario, titulo} = props.nombreEquipo;
+    const {colaboradores} = props;
 
     const coloresSecundarios = {backgroundColor: colorSecundario}
     const colorBorde = {borderColor: colorPrimario}
@@ -11,12 +12,12 @@ const Equipo = (props)=>{
     return <section className='equipo' style={coloresSecundarios}>
         <h3 style={colorBorde}>{titulo}</h3>
         <div className='colaboradores'>
-            <Colaborador/>
-            <Colaborador/>
-            <Colaborador/>
-            <Colaborador/>
-            <Colaborador/>
-            <Colaborador/>
+            {
+                colaboradores.map((colaborador,posicion)=> <Colaborador 
+                    datos={colaborador}
+                    key={posicion}
+                    />)
+            }
         </div>
     </section>
 }
