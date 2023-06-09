@@ -3,10 +3,11 @@ import "./colaborador.css"
 const Colaborador = (props)=>{
 
     const {nombreColab,puestoColab,fotoColab,equipoColab} = props.datos;
-    const {colorFondo} = props;
+    const {colorFondo,eliminarTarjeta} = props;
     const fondoTarjeta = {backgroundColor: colorFondo}
 
     return <div className="tarjetaColaborador">
+        <span onClick={eliminarTarjeta}>D</span>
         <div className="encabezado" style={fondoTarjeta}>
             <img src={fotoColab} alt={nombreColab}/>
         </div>

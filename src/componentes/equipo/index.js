@@ -4,7 +4,7 @@ import Colaborador from "../tarjeta_colaborador";
 const Equipo = (props)=>{
 
     const {colorPrimario, colorSecundario, titulo} = props.nombreEquipo;
-    const {colaboradores} = props;
+    const {colaboradores,eliminarColab} = props;
 
     const coloresSecundarios = {backgroundColor: colorSecundario}
     const colorBorde = {borderColor: colorPrimario}
@@ -18,6 +18,7 @@ const Equipo = (props)=>{
                     datos={colaborador}
                     key={posicion}
                     colorFondo={colorPrimario}
+                    eliminarTarjeta = {eliminarColab}
                     />)
             }
         </div>

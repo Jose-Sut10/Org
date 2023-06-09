@@ -8,7 +8,38 @@ import Footer from './componentes/footer';
 
 function App() {
   const [mostrarFormulario, actualizarFormulario] = useState(false);
-  const [datos, mostrarDatos] = useState([]);
+  const [datos, mostrarDatos] = useState([
+    {
+    equipoColab: "Front End",
+    fotoColab: "https://github.com/harlandlohora.png",
+    nombreColab: "Harland Lohora",
+    puestoColab: "Instructor"
+  },
+  {
+    equipoColab: "Programación",
+    fotoColab: "https://github.com/genesysaluralatam.png",
+    nombreColab: "Genesys Rondón",
+    puestoColab: "Desarrolladora de software e instructora"
+  },
+  {
+    equipoColab: "Programación",
+    fotoColab: "https://github.com/christianpva.png",
+    nombreColab: "Christian Velasco",
+    puestoColab: "Head de Alura e instructor"
+  },
+  {
+    equipoColab: "UX y Diseño",
+    fotoColab: "https://github.com/JeanmarieAluraLatam.png",
+    nombreColab: "Jeanmarie Quijada",
+    puestoColab: "Instructora en Alura Latam"
+  },
+  {
+    equipoColab: "Innovación y Gestión",
+    fotoColab: "https://github.com/JoseDarioGonzalezCha.png",
+    nombreColab: "José Gonzalez",
+    puestoColab: "Dev FullStack"
+  }
+  ]);
 
   const cambioMostrar = ()=>{
     actualizarFormulario(!mostrarFormulario);
@@ -19,6 +50,11 @@ function App() {
     //console.log("Nuevo Colaborador UwU", colaborador); 
     //Spread operator
     mostrarDatos([...datos,colaborador]);
+  }
+
+  //eliminar Colaborador
+  const eliminarColaborador = ()=>{
+    console.log ("Eliminando un componente");
   }
 
   //Ternario --> condicion ? semuestra : noseMuestra
@@ -76,6 +112,7 @@ function App() {
           nombreEquipo={equipo} 
           key={equipo.titulo}
           colaboradores = {datos.filter( colaborador =>colaborador.equipoColab===equipo.titulo)}
+          eliminarColab={eliminarColaborador}
         />)
       }
 
