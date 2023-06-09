@@ -4,6 +4,7 @@ import Encabezado from './componentes/header/header';
 import Formulario from './componentes/formulario/formulario';
 import MiOrg from './componentes/MiOrg';
 import Equipo from './componentes/equipo';
+import Footer from './componentes/footer';
 
 function App() {
   const [mostrarFormulario, actualizarFormulario] = useState(false);
@@ -15,7 +16,7 @@ function App() {
 
   //registro de colaboradores
   const registroColaborador = (colaborador)=>{
-    console.log("Nuevo Colaborador UwU", colaborador); 
+    //console.log("Nuevo Colaborador UwU", colaborador); 
     //Spread operator
     mostrarDatos([...datos,colaborador]);
   }
@@ -77,6 +78,8 @@ function App() {
           colaboradores = {datos.filter( colaborador =>colaborador.equipoColab===equipo.titulo)}
         />)
       }
+
+      <Footer />
 
     </div>
   );
