@@ -17,6 +17,7 @@ const Equipo = (props)=>{
                 colaboradores.map((colaborador,posicion)=> <Colaborador 
                     datos={colaborador}
                     key={posicion}
+                    colorFondo={colorPrimario}
                     />)
             }
         </div>

@@ -3,9 +3,11 @@ import "./colaborador.css"
 const Colaborador = (props)=>{
 
     const {nombreColab,puestoColab,fotoColab,equipoColab} = props.datos;
+    const {colorFondo} = props;
+    const fondoTarjeta = {backgroundColor: colorFondo}
 
     return <div className="tarjetaColaborador">
-        <div className="encabezado">
+        <div className="encabezado" style={fondoTarjeta}>
             <img src={fotoColab} alt={nombreColab}/>
         </div>
         <div className="informacion">
