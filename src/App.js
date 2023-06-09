@@ -72,9 +72,9 @@ function App() {
       
       {
         listaEquipos.map( (equipo)=> <Equipo 
-        nombreEquipo={equipo} 
-        key={equipo.titulo}
-        colaboradores = {datos}
+          nombreEquipo={equipo} 
+          key={equipo.titulo}
+          colaboradores = {datos.filter( colaborador =>colaborador.equipoColab===equipo.titulo)}
         />)
       }
 

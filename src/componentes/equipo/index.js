@@ -9,7 +9,8 @@ const Equipo = (props)=>{
     const coloresSecundarios = {backgroundColor: colorSecundario}
     const colorBorde = {borderColor: colorPrimario}
 
-    return <section className='equipo' style={coloresSecundarios}>
+    return <> {colaboradores.length>0 &&
+        <section className='equipo' style={coloresSecundarios}>
         <h3 style={colorBorde}>{titulo}</h3>
         <div className='colaboradores'>
             {
@@ -20,6 +21,7 @@ const Equipo = (props)=>{
             }
         </div>
     </section>
+    }</>
 }
 
 export default Equipo; 
