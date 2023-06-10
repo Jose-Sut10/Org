@@ -11,16 +11,24 @@ const Equipo = (props)=>{
 
     return <> {colaboradores.length>0 &&
         <section className='equipo' style={coloresSecundarios}>
-        <h3 style={colorBorde}>{titulo}</h3>
-        <div className='colaboradores'>
-            {
-                colaboradores.map((colaborador,posicion)=> <Colaborador 
-                    datos={colaborador}
-                    key={posicion}
-                    colorFondo={colorPrimario}
-                    eliminarTarjeta = {eliminarColab}
-                    />)
-            }
+            <input className="input__color"
+                type="color"
+                value={colorSecundario}
+                onChange={(event)=>{
+                    console.log(event.target.value)
+                }}
+            />
+            
+            <h3 style={colorBorde}>{titulo}</h3>
+            <div className='colaboradores'>
+                {
+                    colaboradores.map((colaborador,posicion)=> <Colaborador 
+                        datos={colaborador}
+                        key={posicion}
+                        colorFondo={colorPrimario}
+                        eliminarTarjeta = {eliminarColab}
+                        />)
+                }
         </div>
     </section>
     }</>
