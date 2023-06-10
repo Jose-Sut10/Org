@@ -1,4 +1,5 @@
 import "./colaborador.css"
+import {AiFillCloseCircle} from "react-icons/ai"
 
 const Colaborador = (props)=>{
 
@@ -7,7 +8,7 @@ const Colaborador = (props)=>{
     const fondoTarjeta = {backgroundColor: colorFondo}
 
     return <div className="tarjetaColaborador">
-        <span onClick={eliminarTarjeta}>D</span>
+        <AiFillCloseCircle onClick={eliminarTarjeta} className="eliminar"/>
         <div className="encabezado" style={fondoTarjeta}>
             <img src={fotoColab} alt={nombreColab}/>
         </div>
