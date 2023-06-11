@@ -4,7 +4,7 @@ import Colaborador from "../tarjeta_colaborador";
 const Equipo = (props)=>{
 
     const {colorPrimario, colorSecundario, titulo} = props.nombreEquipo;
-    const {colaboradores,eliminarColab} = props;
+    const {colaboradores,eliminarColab,colorUsuario} = props;
 
     const coloresSecundarios = {backgroundColor: colorSecundario}
     const colorBorde = {borderColor: colorPrimario}
@@ -15,7 +15,7 @@ const Equipo = (props)=>{
                 type="color"
                 value={colorSecundario}
                 onChange={(event)=>{
-                    console.log(event.target.value)
+                    colorUsuario(event.target.value,titulo);
                 }}
             />
             

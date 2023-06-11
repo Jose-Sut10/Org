@@ -57,6 +57,11 @@ function App() {
     console.log ("Eliminando un componente");
   }
 
+  //actualizar color de equipos
+  const cambioColor = (color, titulo)=>{
+    console.log("actaulizando color", color, titulo);
+  }
+
   //Ternario --> condicion ? semuestra : noseMuestra
 
   const listaEquipos = [
@@ -113,6 +118,7 @@ function App() {
           key={equipo.titulo}
           colaboradores = {datos.filter( colaborador =>colaborador.equipoColab===equipo.titulo)}
           eliminarColab={eliminarColaborador}
+          colorUsuario = {cambioColor}
         />)
       }
 
