@@ -1,19 +1,20 @@
 import "./equipo.css"; 
 import Colaborador from "../tarjeta_colaborador";
+import hexToRgba from "hex-to-rgba";
 
 const Equipo = (props)=>{
 
     const {colorPrimario, colorSecundario, titulo} = props.nombreEquipo;
     const {colaboradores,eliminarColab,colorUsuario} = props;
 
-    const coloresSecundarios = {backgroundColor: colorSecundario}
+    const coloresSecundarios = {backgroundColor: hexToRgba(colorPrimario,0.6)}
     const colorBorde = {borderColor: colorPrimario}
 
     return <> {colaboradores.length>0 &&
         <section className='equipo' style={coloresSecundarios}>
             <input className="input__color"
                 type="color"
-                value={colorSecundario}
+                value={colorPrimario}
                 onChange={(event)=>{
                     colorUsuario(event.target.value,titulo);
                 }}

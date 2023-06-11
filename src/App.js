@@ -8,6 +8,43 @@ import Footer from './componentes/footer';
 
 function App() {
   const [mostrarFormulario, actualizarFormulario] = useState(false);
+  const [listaEquipos, actualizarListaEquipos] = useState([
+    {
+      titulo: "Programación",
+      colorPrimario: "#57C278", 
+      colorSecundario: "#D9F7E9"
+    },
+    {
+      titulo: "Front End",
+      colorPrimario: "#82CFFA", 
+      colorSecundario: "#E8F8FF"
+    },
+    {
+      titulo: "Data Science",
+      colorPrimario: "#A6D157", 
+      colorSecundario: "#F0F8E2"
+    },
+    {
+      titulo: "Devops",
+      colorPrimario: "#E06B69", 
+      colorSecundario: "#FDE7E8"
+    },
+    {
+      titulo: "UX y Diseño",
+      colorPrimario: "#DB6EBF", 
+      colorSecundario: "#FAE9F5"
+    },
+    {
+      titulo: "Móvil",
+      colorPrimario: "#FFBA05", 
+      colorSecundario: "#FFF5D9"
+    },
+    {
+      titulo: "Innovación y Gestión",
+      colorPrimario: "#FF8A29", 
+      colorSecundario: "#FFEEDF"
+    }
+  ]);
   const [datos, mostrarDatos] = useState([
     {
     equipoColab: "Front End",
@@ -59,48 +96,17 @@ function App() {
 
   //actualizar color de equipos
   const cambioColor = (color, titulo)=>{
-    console.log("actaulizando color", color, titulo);
+    const datosActualizados = listaEquipos.map((equipoAct)=>{
+      if(equipoAct.titulo === titulo){
+        equipoAct.colorPrimario = color; 
+      }
+
+      return equipoAct;
+    })
+    actualizarListaEquipos(datosActualizados);
   }
 
   //Ternario --> condicion ? semuestra : noseMuestra
-
-  const listaEquipos = [
-    {
-      titulo: "Programación",
-      colorPrimario: "#57C278", 
-      colorSecundario: "#D9F7E9"
-    },
-    {
-      titulo: "Front End",
-      colorPrimario: "#82CFFA", 
-      colorSecundario: "#E8F8FF"
-    },
-    {
-      titulo: "Data Science",
-      colorPrimario: "#A6D157", 
-      colorSecundario: "#F0F8E2"
-    },
-    {
-      titulo: "Devops",
-      colorPrimario: "#E06B69", 
-      colorSecundario: "#FDE7E8"
-    },
-    {
-      titulo: "UX y Diseño",
-      colorPrimario: "#DB6EBF", 
-      colorSecundario: "#FAE9F5"
-    },
-    {
-      titulo: "Móvil",
-      colorPrimario: "#FFBA05", 
-      colorSecundario: "#FFF5D9"
-    },
-    {
-      titulo: "Innovación y Gestión",
-      colorPrimario: "#FF8A29", 
-      colorSecundario: "#FFEEDF"
-    },
-  ];
 
   return (
     <div>
