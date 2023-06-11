@@ -103,8 +103,9 @@ function App() {
   }
 
   //eliminar Colaborador
-  const eliminarColaborador = ()=>{
-    console.log ("Eliminando un componente");
+  const eliminarColaborador = (id)=>{
+    const nuevosDatos = datos.filter((colaborador) => colaborador.id !== id)
+    mostrarDatos(nuevosDatos);
   }
 
   //actualizar color de equipos
