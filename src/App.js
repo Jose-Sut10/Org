@@ -120,6 +120,12 @@ function App() {
     actualizarListaEquipos(datosActualizados);
   }
 
+  //crear equipo
+  const crearEquipo = (nuevoEquipo)=>{
+    console.log(nuevoEquipo); 
+    actualizarListaEquipos([...listaEquipos, {...nuevoEquipo, id: uuid()}]);
+  }
+
   //Ternario --> condicion ? semuestra : noseMuestra
 
   return (
@@ -128,6 +134,7 @@ function App() {
       {mostrarFormulario && <Formulario 
         equipos={listaEquipos.map((tituloEquipo)=> tituloEquipo.titulo)}
         registro = {registroColaborador}
+        nuevoEquipo = {crearEquipo}
       />}
 
       <MiOrg estado={cambioMostrar}/>
