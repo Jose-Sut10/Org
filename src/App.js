@@ -59,35 +59,40 @@ function App() {
     equipoColab: "Front End",
     fotoColab: "https://github.com/harlandlohora.png",
     nombreColab: "Harland Lohora",
-    puestoColab: "Instructor"
+    puestoColab: "Instructor",
+    fav: false
   },
   {
     id: uuid(),
     equipoColab: "Programación",
     fotoColab: "https://github.com/genesysaluralatam.png",
     nombreColab: "Genesys Rondón",
-    puestoColab: "Desarrolladora de software e instructora"
+    puestoColab: "Desarrolladora de software e instructora",
+    fav: false
   },
   {
     id: uuid(),
     equipoColab: "Programación",
     fotoColab: "https://github.com/christianpva.png",
     nombreColab: "Christian Velasco",
-    puestoColab: "Head de Alura e instructor"
+    puestoColab: "Head de Alura e instructor",
+    fav: false
   },
   {
     id: uuid(),
     equipoColab: "UX y Diseño",
     fotoColab: "https://github.com/JeanmarieAluraLatam.png",
     nombreColab: "Jeanmarie Quijada",
-    puestoColab: "Instructora en Alura Latam"
+    puestoColab: "Instructora en Alura Latam",
+    fav: false
   },
   {
     id: uuid(),
     equipoColab: "Innovación y Gestión",
     fotoColab: "https://github.com/JoseDarioGonzalezCha.png",
     nombreColab: "José Gonzalez",
-    puestoColab: "Dev FullStack"
+    puestoColab: "Dev FullStack",
+    fav: false
   }
   ]);
 
@@ -126,6 +131,17 @@ function App() {
     actualizarListaEquipos([...listaEquipos, {...nuevoEquipo, id: uuid()}]);
   }
 
+  const like = (id) => {
+    const colaboradoresActualizados = datos.map((colab)=>{
+      if(colab.id === id){
+        colab.fav = !colab.fav;
+      }
+      return colab;
+    })
+
+    mostrarDatos(colaboradoresActualizados)
+  }
+
   //Ternario --> condicion ? semuestra : noseMuestra
 
   return (
@@ -146,6 +162,7 @@ function App() {
           colaboradores = {datos.filter( colaborador =>colaborador.equipoColab===equipo.titulo)}
           eliminarColab={eliminarColaborador}
           colorUsuario = {cambioColor}
+          favorito={like}
         />)
       }
 

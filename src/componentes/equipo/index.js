@@ -4,8 +4,8 @@ import hexToRgba from "hex-to-rgba";
 
 const Equipo = (props)=>{
 
-    const {colorPrimario, colorSecundario, titulo,id} = props.nombreEquipo;
-    const {colaboradores,eliminarColab,colorUsuario} = props;
+    const {colorPrimario, titulo,id} = props.nombreEquipo;
+    const {colaboradores,eliminarColab,colorUsuario,favorito} = props;
 
     const coloresSecundarios = {backgroundColor: hexToRgba(colorPrimario,0.6)}
     const colorBorde = {borderColor: colorPrimario}
@@ -28,6 +28,7 @@ const Equipo = (props)=>{
                         key={posicion}
                         colorFondo={colorPrimario}
                         eliminarTarjeta = {eliminarColab}
+                        favoritoEq={favorito}
                         />)
                 }
         </div>

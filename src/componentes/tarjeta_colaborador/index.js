@@ -1,10 +1,10 @@
 import "./colaborador.css"
-import {AiFillCloseCircle} from "react-icons/ai"
+import {AiFillCloseCircle, AiOutlineHeart, AiFillHeart} from "react-icons/ai"
 
 const Colaborador = (props)=>{
 
-    const {nombreColab,puestoColab,fotoColab,equipoColab,id} = props.datos;
-    const {colorFondo,eliminarTarjeta} = props;
+    const {nombreColab,puestoColab,fotoColab,id,fav} = props.datos;
+    const {colorFondo,eliminarTarjeta,favoritoEq} = props;
     const fondoTarjeta = {backgroundColor: colorFondo}
 
     return <div className="tarjetaColaborador">
@@ -15,6 +15,8 @@ const Colaborador = (props)=>{
         <div className="informacion">
             <h4>{nombreColab}</h4>
             <h5>{puestoColab}</h5>
+            {fav ? <AiFillHeart color="red" onClick={() => favoritoEq(id)} className="fav"/> 
+            : <AiOutlineHeart onClick={()=>favoritoEq(id)} className="fav"/>}
         </div>
     </div>
 }
