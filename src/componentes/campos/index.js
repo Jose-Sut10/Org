@@ -1,21 +1,23 @@
-import "./campos-texto.css"; 
+import "./campos.css"; 
 
-const CamposTexto = (props) =>{
+const Campos = (props) =>{
     const textoDescripcion = `${props.descripcion}...`;
+    const {tipo = "text"} = props;
 
     const valorInput = (event) =>{
         props.actualizarValor(event.target.value); 
     }
 
-    return <div className="campo-texto">
+    return <div className={`campo campo-${tipo}`}>
         <label>{props.titulo}</label>
         <input 
             placeholder={textoDescripcion} 
             required={props.importancia} 
             value={props.valor}
             onChange={valorInput}
+            type={tipo}
         />
     </div>
 }
 
-export default CamposTexto; 
+export default Campos; 
